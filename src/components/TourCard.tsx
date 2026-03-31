@@ -10,10 +10,6 @@ const TourCard = ({ tour }: { tour: Tour }) => {
 
         <p className="text-gray-300">{tour.duration}</p>
 
-        <p className="text-lg text-yellow-400 font-semibold mt-2">
-          {tour.price}
-        </p>
-
         <button className="mt-4 px-4 py-2 bg-gradient-to-r from-red-600 to-yellow-500 rounded-lg text-white">
           Xem chi tiết
         </button>

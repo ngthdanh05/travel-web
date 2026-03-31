@@ -1,36 +1,34 @@
 import { tours } from "../data/tours";
 import Stack from "./Stack";
 
-const cards = tours.map((tour) => (
-  <div className="w-full h-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl">
-    <img
-      src={tour.image}
-      className="h-44 sm:h-52 md:h-60 lg:h-64 w-full object-cover"
-    />
+const cards = [...tours]
+  .sort((a, b) => a.id - b.id)
+  .map((tour) => (
+    <div className="w-full h-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl">
+      <img
+        src={tour.image}
+        className="h-44 sm:h-52 md:h-60 lg:h-64 w-full object-cover"
+      />
 
-    <div className="p-4 sm:p-5 md:p-6">
-      <h3 className="text-base sm:text-lg md:text-xl font-bold text-yellow-400 mb-2">
-        {tour.name}
-      </h3>
+      <div className="p-4 sm:p-5 md:p-6">
+        <h3 className="text-base sm:text-lg md:text-2xl font-bold text-yellow-400 mb-2">
+          {tour.name}
+        </h3>
 
-      <p className="text-xs sm:text-sm md:text-base text-gray-300">
-        {tour.duration}
-      </p>
+        <p className="text-xs sm:text-sm md:text-base font-bold text-gray-300">
+          {tour.duration}
+        </p>
 
-      <p className="text-sm sm:text-base md:text-lg text-yellow-300 font-semibold mt-2">
-        {tour.price}
-      </p>
-
-      <div className="mt-3 sm:mt-4 border-l border-yellow-500 pl-3">
-        {tour.itinerary.slice(0, 3).map((day, index) => (
-          <p key={index} className="text-xs sm:text-sm text-gray-300 mb-1">
-            {day}
-          </p>
-        ))}
+        <div className="mt-3 sm:mt-4 border-l border-yellow-500 pl-3">
+          {tour.itinerary.slice(0, 3).map((day, index) => (
+            <p key={index} className="text-xs sm:text-sm text-gray-300 mb-1">
+              {day}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-));
+  ));
 
 const Hero = () => {
   return (
@@ -51,7 +49,7 @@ const Hero = () => {
       <div
         className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
         grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center 
-        py-12 sm:py-16 md:py-20"
+        py-12 sm:py-16 md:py-20 select-none"
       >
         {/* LEFT */}
         <div className="text-center md:text-left flex flex-col gap-4">
@@ -80,6 +78,7 @@ const Hero = () => {
         <div className="relative w-full flex justify-center">
           <div
             className="
+            select-none
             w-[300px] 
             sm:w-[320px] 
             md:w-[340px] 

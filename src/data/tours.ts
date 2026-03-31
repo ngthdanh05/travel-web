@@ -2,7 +2,6 @@ export interface Tour {
   id: number;
   name: string;
   duration: string;
-  price: string;
   image: string;
   itinerary: string[];
 }
@@ -10,10 +9,9 @@ export interface Tour {
 export const tours: Tour[] = [
   {
     id: 1,
-    name: "Một miền di sản",
-    duration: "3 ngày 2 đêm",
-    price: "6.990.000đ",
-    image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482",
+    name: "Hội An",
+    duration: "Ngày thứ 3",
+    image: "/image/hoian.jpg",
     itinerary: [
       "Ngày 1: Hà Nội - Khởi hành",
       "Ngày 2: Huế - Kinh thành",
@@ -24,10 +22,9 @@ export const tours: Tour[] = [
   },
   {
     id: 2,
-    name: "Một miền di sản",
-    duration: "3 ngày 2 đêm",
-    price: "6.990.000đ",
-    image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482",
+    name: "Đà Nẵng",
+    duration: "Ngày thứ 2",
+    image: "/image/danang.jpg",
     itinerary: [
       "Ngày 1: Hà Nội - Khởi hành",
       "Ngày 2: Huế - Kinh thành",
@@ -36,12 +33,12 @@ export const tours: Tour[] = [
       "Ngày 5: Kết thúc",
     ],
   },
+
   {
     id: 3,
-    name: "Một miền di sản",
-    duration: "3 ngày 2 đêm",
-    price: "6.990.000đ",
-    image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482",
+    name: "Huế",
+    duration: "Ngày đầu tiên",
+    image: "/image/hue2.jpg",
     itinerary: [
       "Ngày 1: Hà Nội - Khởi hành",
       "Ngày 2: Huế - Kinh thành",

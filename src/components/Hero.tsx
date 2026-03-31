@@ -1,4 +1,38 @@
 import { tours } from "../data/tours";
+import Stack from "./Stack";
+
+const cards = tours.map((tour) => (
+  <div className="w-full h-full bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl">
+    <img
+      src={tour.image}
+      className="h-48 sm:h-56 md:h-64 w-full object-cover"
+    />
+
+    <div className="p-4 sm:p-6">
+      <h3 className="text-lg sm:text-xl font-bold text-yellow-400 mb-2">
+        {tour.name}
+      </h3>
+
+      <p className="text-sm sm:text-base text-gray-300">{tour.duration}</p>
+
+      <p className="text-base sm:text-lg text-yellow-300 font-semibold mt-2">
+        {tour.price}
+      </p>
+
+      <div className="mt-3 sm:mt-4 border-l border-yellow-500 pl-3 sm:pl-4">
+        {tour.itinerary.slice(0, 3).map((day, index) => (
+          <p key={index} className="text-xs sm:text-sm text-gray-300 mb-1">
+            {day}
+          </p>
+        ))}
+      </div>
+
+      <button className="mt-4 sm:mt-5 w-full py-2 bg-gradient-to-r from-red-600 to-yellow-500 rounded-lg hover:scale-105 transition">
+        Đặt tour ngay
+      </button>
+    </div>
+  </div>
+));
 
 const Hero = () => {
   const tour = tours[0];
@@ -45,47 +79,15 @@ const Hero = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="relative flex justify-center">
-          {/* Glow */}
-          <div className="absolute w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] bg-gradient-to-tr from-red-600/30 to-yellow-400/20 blur-3xl rounded-full" />
-
-          {/* Card */}
-          <div className="relative w-full max-w-sm sm:max-w-md bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition duration-500">
-            <img
-              src={tour.image}
-              className="h-48 sm:h-56 md:h-64 w-full object-cover"
-            />
-
-            <div className="p-4 sm:p-6">
-              <h3 className="text-lg sm:text-xl font-bold text-yellow-400 mb-2">
-                {tour.name}
-              </h3>
-
-              <p className="text-sm sm:text-base text-gray-300">
-                {tour.duration}
-              </p>
-
-              <p className="text-base sm:text-lg text-yellow-300 font-semibold mt-2">
-                {tour.price}
-              </p>
-
-              {/* Timeline */}
-              <div className="mt-3 sm:mt-4 border-l border-yellow-500 pl-3 sm:pl-4">
-                {tour.itinerary.slice(0, 3).map((day, index) => (
-                  <p
-                    key={index}
-                    className="text-xs sm:text-sm text-gray-300 mb-1"
-                  >
-                    {day}
-                  </p>
-                ))}
-              </div>
-
-              <button className="mt-4 sm:mt-5 w-full py-2 bg-gradient-to-r from-red-600 to-yellow-500 rounded-lg hover:scale-105 transition">
-                Đặt tour ngay
-              </button>
-            </div>
-          </div>
+        <div className="relative w-full max-w-sm sm:max-w-md h-[400px] sm:h-[450px] md:h-[500px]">
+          <Stack
+            cards={cards}
+            autoplay
+            autoplayDelay={3000}
+            pauseOnHover
+            randomRotation
+            sendToBackOnClick
+          />
         </div>
       </div>
     </section>

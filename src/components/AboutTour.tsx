@@ -43,10 +43,6 @@ const AboutTour = () => {
 
             <p className="text-gray-300">{tour.duration}</p>
 
-            <p className="text-lg text-yellow-400 font-semibold mt-2">
-              {tour.price}
-            </p>
-
             {/* Timeline */}
             <div className="mt-4 border-l border-yellow-500 pl-4">
               {tour.itinerary.map((day, index) => (

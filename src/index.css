@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black text-white;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: repeating-radial-gradient(
+    circle,
+    rgba(255, 140, 0, 0.15),
+    rgba(255, 140, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 40px
+  );
+  animation: waveMove 20s linear infinite;
+}
+
+@keyframes waveMove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

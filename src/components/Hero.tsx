@@ -35,8 +35,6 @@ const cards = tours.map((tour) => (
 ));
 
 const Hero = () => {
-  const tour = tours[0];
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black text-white">
       {/* Background */}

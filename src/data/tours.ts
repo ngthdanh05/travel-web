@@ -1,50 +1,48 @@
 export interface Tour {
   id: number;
   name: string;
-  duration: string;
+  subtitle: string;
   image: string;
-  itinerary: string[];
+  duration: string;
+  location: string;
+  activities: string[];
 }
 
 export const tours: Tour[] = [
   {
     id: 1,
     name: "Hội An",
-    duration: "Ngày thứ 3",
+    subtitle: "Phố cổ, ánh đèn lung linh và ẩm thực đặc sắc",
     image: "/image/hoian.jpg",
-    itinerary: [
-      "Ngày 1: Hà Nội - Khởi hành",
-      "Ngày 2: Huế - Kinh thành",
-      "Ngày 3: Hội An - Phố cổ",
-      "Ngày 4: Đà Nẵng - Biển",
-      "Ngày 5: Kết thúc",
-    ],
+    duration: "1 ngày",
+    location: "Hội An",
+    activities: ["Dạo phố cổ", "Thả đèn hoa đăng", "Ăn cao lầu, mì Quảng"],
   },
   {
     id: 2,
     name: "Đà Nẵng",
-    duration: "Ngày thứ 2",
+    subtitle: "Thành phố của những cây cầu và biển xanh",
     image: "/image/danang.jpg",
-    itinerary: [
-      "Ngày 1: Hà Nội - Khởi hành",
-      "Ngày 2: Huế - Kinh thành",
-      "Ngày 3: Hội An - Phố cổ",
-      "Ngày 4: Đà Nẵng - Biển",
-      "Ngày 5: Kết thúc",
+    duration: "3 ngày 2 đêm",
+    location: "Đà Nẵng",
+    activities: [
+      "Check-in Cầu Vàng",
+      "Tham quan Bà Nà Hills",
+      "Tắm biển Mỹ Khê",
     ],
   },
 
   {
     id: 3,
     name: "Huế",
-    duration: "Ngày đầu tiên",
-    image: "/image/hue2.jpg",
-    itinerary: [
-      "Ngày 1: Hà Nội - Khởi hành",
-      "Ngày 2: Huế - Kinh thành",
-      "Ngày 3: Hội An - Phố cổ",
-      "Ngày 4: Đà Nẵng - Biển",
-      "Ngày 5: Kết thúc",
+    subtitle: "Khám phá cố đô mộng mơ, di sản và chiều sâu văn hóa",
+    image: "/image/hue.jpg",
+    duration: "2 ngày 1 đêm",
+    location: "Huế",
+    activities: [
+      "Tham quan Đại Nội",
+      "Chùa Thiên Mụ",
+      "Thưởng thức bún bò Huế",
     ],
   },
 ];
